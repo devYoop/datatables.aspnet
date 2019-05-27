@@ -159,7 +159,7 @@ namespace DataTables.AspNet.AspNetCore
         /// <returns>A json representation of your data.</returns>
         public virtual string SerializeData(object data)
         {
-            var settings = new JsonSerializerSettings() { ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver() };
+            var settings = new JsonSerializerSettings() { ContractResolver = new Newtonsoft.Json.Serialization.DefaultContractResolver() };
             return JsonConvert.SerializeObject(data, settings);
         }
 
