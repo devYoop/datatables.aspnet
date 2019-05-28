@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataTables.AspNet.Core\DataTables.AspNet.Core.csproj" />
-    <ProjectReference Include="..\DataTables.AspNet.Mvc5\DataTables.AspNet.Mvc5.csproj" />
   </ItemGroup>
 
   <ItemGroup>

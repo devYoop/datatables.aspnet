@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>DataTables.AspNet extensions for AnsiSql generation.</Description>
@@ -7,7 +7,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <VersionPrefix>2.0.0-alpha1</VersionPrefix>
     <Authors>Anderson Matos</Authors>
-    <TargetFrameworks>net45;netstandard1.1</TargetFrameworks>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyName>DataTables.AspNet.Extensions.AnsiSql</AssemblyName>
     <PackageId>DataTables.AspNet.Extensions.AnsiSql</PackageId>
     <PackageTags>DataTables;DataTables.Mvc;DataTables.AspNet;Sql;Ansi</PackageTags>
@@ -18,14 +18,4 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ALMMa/datatables.aspnet</RepositoryUrl>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DataTables.AspNet.Core\DataTables.AspNet.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
 </Project>

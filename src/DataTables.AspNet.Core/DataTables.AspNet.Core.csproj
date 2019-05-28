@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <Description>Core elements for DataTables.AspNet.</Description>
@@ -7,8 +7,7 @@
     <NeutralLanguage>en-US</NeutralLanguage>
     <VersionPrefix>2.0.2</VersionPrefix>
     <Authors>Anderson Matos</Authors>
-    <TargetFrameworks>net45;netstandard1.1</TargetFrameworks>
-    <AssemblyName>DataTables.AspNet.Core</AssemblyName>
+     <AssemblyName>DataTables.AspNet.Core</AssemblyName>
     <PackageId>DataTables.AspNet.Core</PackageId>
     <PackageTags>DataTables;DataTables.Mvc;DataTables.AspNet;Mvc;AspNet;WebApi</PackageTags>
     <PackageReleaseNotes>Updated dependencies and framework.</PackageReleaseNotes>
@@ -17,12 +16,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ALMMa/datatables.aspnet</RepositoryUrl>
-    <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.1' ">1.6.1</NetStandardImplicitPackageVersion>
+    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
 </Project>
