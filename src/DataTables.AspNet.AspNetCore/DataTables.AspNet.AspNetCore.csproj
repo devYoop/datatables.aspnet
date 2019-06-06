@@ -8,18 +8,19 @@
     <VersionPrefix>2.0.2</VersionPrefix>
     <Authors>Anderson Matos</Authors>
     <AssemblyName>DataTables.AspNet.AspNetCore</AssemblyName>
-    <PackageId>DataTables.AspNet.AspNetCore</PackageId>
+    <PackageId>Yoopala.DataTables.AspNet.AspNetCore</PackageId>
     <PackageTags>DataTables;DataTables.Mvc;DataTables.AspNet;AspNet;AspNet5</PackageTags>
     <PackageReleaseNotes>Updated model binder to not break on missing column name. Updated dependencies and framework.</PackageReleaseNotes>
     <PackageProjectUrl>https://github.com/ALMMa/datatables.aspnet</PackageProjectUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/ALMMa/datatables.aspnet/master/LICENSE</PackageLicenseUrl>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ALMMa/datatables.aspnet</RepositoryUrl>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>7.3</LangVersion>
     <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
-    <Version>2.0.3</Version>
+    <Version>2.0.4</Version>
+    <Product>Yoopala.DataTables.AspNet.AspNetCore</Product>
   </PropertyGroup>
 
   <ItemGroup>
