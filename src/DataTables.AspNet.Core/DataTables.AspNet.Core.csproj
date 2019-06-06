@@ -16,6 +16,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/ALMMa/datatables.aspnet</RepositoryUrl>
-    <TargetFrameworks>netcoreapp2.2</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 </Project>
