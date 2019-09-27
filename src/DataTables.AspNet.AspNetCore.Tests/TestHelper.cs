@@ -66,72 +66,72 @@ namespace DataTables.AspNet.AspNetCore.Tests
                 new Column("column2_name", "column2_field", false, true, MockSearch("column2_search_value", true)),
             };
         }
-        public static ModelBindingContext MockModelBindingContextWithCamelCase(string draw, string length, string start, string searchValue, string searchRegex)
-        { return MockModelBindingContextWithCamelCase(draw, length, start, searchValue, searchRegex, null); }
-        public static ModelBindingContext MockModelBindingContextWithCamelCase(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters)
-        { return MockModelBindingContext(draw, length, start, searchValue, searchRegex, additionalParameters, new NameConvention.CamelCaseRequestNameConvention()); }
-        public static ModelBindingContext MockModelBindingContextWithHungarianNotation(string draw, string length, string start, string searchValue, string searchRegex)
-        { return MockModelBindingContextWithHungarianNotation(draw, length, start, searchValue, searchRegex, null); }
-        public static ModelBindingContext MockModelBindingContextWithHungarianNotation(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters)
-        { return MockModelBindingContext(draw, length, start, searchValue, searchRegex, additionalParameters, new NameConvention.HungarianNotationRequestNameConvention()); }
-        public static ModelBindingContext MockModelBindingContext(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters, Core.NameConvention.IRequestNameConvention requestNameConvention)
-        {
-            // Request properties.
-            var formCollection = new Dictionary<string, StringValues>()
-            {
-                { requestNameConvention.Length, length },
-                { requestNameConvention.Start, start },
-                { requestNameConvention.SearchValue, searchValue },
-                { requestNameConvention.IsSearchRegex, searchRegex }
-            };
-            if (!String.IsNullOrWhiteSpace(draw)) formCollection.Add(requestNameConvention.Draw, draw);
+        //public static ModelBindingContext MockModelBindingContextWithCamelCase(string draw, string length, string start, string searchValue, string searchRegex)
+        //{ return MockModelBindingContextWithCamelCase(draw, length, start, searchValue, searchRegex, null); }
+        //public static ModelBindingContext MockModelBindingContextWithCamelCase(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters)
+        //{ return MockModelBindingContext(draw, length, start, searchValue, searchRegex, additionalParameters, new NameConvention.CamelCaseRequestNameConvention()); }
+        //public static ModelBindingContext MockModelBindingContextWithHungarianNotation(string draw, string length, string start, string searchValue, string searchRegex)
+        //{ return MockModelBindingContextWithHungarianNotation(draw, length, start, searchValue, searchRegex, null); }
+        //public static ModelBindingContext MockModelBindingContextWithHungarianNotation(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters)
+        //{ return MockModelBindingContext(draw, length, start, searchValue, searchRegex, additionalParameters, new NameConvention.HungarianNotationRequestNameConvention()); }
+        //public static ModelBindingContext MockModelBindingContext(string draw, string length, string start, string searchValue, string searchRegex, IDictionary<string, object> additionalParameters, Core.NameConvention.IRequestNameConvention requestNameConvention)
+        //{
+        //    // Request properties.
+        //    var formCollection = new Dictionary<string, StringValues>()
+        //    {
+        //        { requestNameConvention.Length, length },
+        //        { requestNameConvention.Start, start },
+        //        { requestNameConvention.SearchValue, searchValue },
+        //        { requestNameConvention.IsSearchRegex, searchRegex }
+        //    };
+        //    if (!String.IsNullOrWhiteSpace(draw)) formCollection.Add(requestNameConvention.Draw, draw);
 
-            // Aditional parameters.
-            if (additionalParameters != null)
-            {
-                foreach (var keypair in additionalParameters)
-                {
-                    formCollection.Add(keypair.Key, Convert.ToString(keypair.Value));
-                }
-            }
+        //    // Aditional parameters.
+        //    if (additionalParameters != null)
+        //    {
+        //        foreach (var keypair in additionalParameters)
+        //        {
+        //            formCollection.Add(keypair.Key, Convert.ToString(keypair.Value));
+        //        }
+        //    }
 
-            // Value provider for request properties.
-            var valueProvider = new FormValueProvider(new BindingSource("a", "a", false, true), new FormCollection(formCollection), new System.Globalization.CultureInfo("en-US"));
+        //    // Value provider for request properties.
+        //    var valueProvider = new FormValueProvider(new BindingSource("a", "a", false, true), new FormCollection(formCollection), new System.Globalization.CultureInfo("en-US"));
 
 
-            // Model metadata.
-            var x = new Microsoft.AspNetCore.Mvc.Internal.DefaultCompositeMetadataDetailsProvider(null);
-            var modelMetadata = new Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider(x).GetMetadataForType(typeof(Core.IDataTablesRequest));
-            //var modelMetadata = new Microsoft.AspNet.Mvc.ModelBinding.Metadata. ModelMetadataProviders.Current.GetMetadataForType(null, typeof(Core.IDataTablesRequest));
+        //    // Model metadata.
+        //    var x = new Microsoft.AspNetCore.Mvc.Internal.DefaultCompositeMetadataDetailsProvider(null);
+        //    var modelMetadata = new Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider(x).GetMetadataForType(typeof(Core.IDataTablesRequest));
+        //    //var modelMetadata = new Microsoft.AspNet.Mvc.ModelBinding.Metadata. ModelMetadataProviders.Current.GetMetadataForType(null, typeof(Core.IDataTablesRequest));
             
-            return new DefaultModelBindingContext()
-            {
-                ModelName = "moq",
-                ValueProvider = valueProvider,
-                ModelMetadata = modelMetadata
-            };
-        }        
-        public static ModelBindingContext MockModelBindingContextWithInvalidRequest()
-        {
-            // Request properties.
-            var formCollection = new Dictionary<string, StringValues>();
+        //    return new DefaultModelBindingContext()
+        //    {
+        //        ModelName = "moq",
+        //        ValueProvider = valueProvider,
+        //        ModelMetadata = modelMetadata
+        //    };
+        //}        
+        //public static ModelBindingContext MockModelBindingContextWithInvalidRequest()
+        //{
+        //    // Request properties.
+        //    var formCollection = new Dictionary<string, StringValues>();
 
-            // Value provider for request properties.
-            var valueProvider = new FormValueProvider(new BindingSource("a", "a", false, true), new FormCollection(formCollection), new System.Globalization.CultureInfo("en-US"));
+        //    // Value provider for request properties.
+        //    var valueProvider = new FormValueProvider(new BindingSource("a", "a", false, true), new FormCollection(formCollection), new System.Globalization.CultureInfo("en-US"));
 
-            // Model metadata.
+        //    // Model metadata.
             
-            var x = new Microsoft.AspNetCore.Mvc.Internal.DefaultCompositeMetadataDetailsProvider(null);
-            var modelMetadata = new Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider(x).GetMetadataForType(typeof(Core.IDataTablesRequest));
-            //var modelMetadata = new Microsoft.AspNet.Mvc.ModelBinding.Metadata. ModelMetadataProviders.Current.GetMetadataForType(null, typeof(Core.IDataTablesRequest));
+        //    var x = new Microsoft.AspNetCore.Mvc.Internal.DefaultCompositeMetadataDetailsProvider(null);
+        //    var modelMetadata = new Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.DefaultModelMetadataProvider(x).GetMetadataForType(typeof(Core.IDataTablesRequest));
+        //    //var modelMetadata = new Microsoft.AspNet.Mvc.ModelBinding.Metadata. ModelMetadataProviders.Current.GetMetadataForType(null, typeof(Core.IDataTablesRequest));
             
-            return new DefaultModelBindingContext()
-            {
-                ModelName = "moq",
-                ValueProvider = valueProvider,
-                ModelMetadata = modelMetadata
-            };
-        }
+        //    return new DefaultModelBindingContext()
+        //    {
+        //        ModelName = "moq",
+        //        ValueProvider = valueProvider,
+        //        ModelMetadata = modelMetadata
+        //    };
+        //}
         public static IDictionary<string, object> ParseAdditionalParameters(ModelBindingContext modelBindingContext)
         {
             var _return = new Dictionary<string, object>();
